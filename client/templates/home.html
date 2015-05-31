@@ -1,0 +1,16 @@
+<template name="home">
+
+	{{#markdown}}
+## Welcome to my Blog
+I am going to be blogging about my development journey.
+
+	{{/markdown}}
+	{{#if currentUser.roles.admin}}
+		<a href="/create-post" class="createNewPost">Create new Post</a>
+	{{/if}}
+	{{ #each postsList}}
+		{{> postInList}}
+	{{/each}}
+	<button class="lazyload">Load More</button>
+
+</template>
